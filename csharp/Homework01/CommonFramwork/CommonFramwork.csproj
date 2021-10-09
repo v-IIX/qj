@@ -43,11 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AttributeExtend\AttributeHelper.cs" />
-    <Compile Include="AttributeExtend\ColumnAttribute.cs" />
-    <Compile Include="log\SqlRunningTime.cs" />
+    <Compile Include="AttributeExtend\Mapping\ColumnAttribute.cs" />
+    <Compile Include="AttributeExtend\Validate\AbstractValidateAttribute.cs" />
     <Compile Include="StaticConstant.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

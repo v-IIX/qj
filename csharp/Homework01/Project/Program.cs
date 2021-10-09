@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 using DAL;
 using Model;
 using CommonFramwork.log;
+using System.Reflection;
+using Ulti;
+using IDAL;
+using Factory;
 
 namespace Project
 {
@@ -42,24 +46,11 @@ namespace Project
         LastModifyTime = DateTime.Now,
       };
 
-      try
-      {
-        BaseDAL baseDAL = new BaseDAL();
-        //Company company = baseDAL.Find<Company>(10);
-        //List<Company> listCompany = baseDAL.FindALL<Company>();
-        //user = baseDAL.Find<User>(1);
-        //user.Name = "腾讯";
-        //baseDAL.UpdateAll<User>(user);
-        //user = new User();
-        //user.Name = "tencent";
-        //user.Mobile = "136";
-        baseDAL.Insert(user);
-      }
-      catch (Exception)
-      {
+      MockData mockData = new MockData();
+      List<Company> data = (List<Company>)mockData.GetMockData<Company>(1000);
 
-        throw;
-      }
+      IBaseDAL baseDAL = DALFactory.CreateInstance();
+      baseDAL.Insert(data);
 
       //Console.ReadKey();
     }

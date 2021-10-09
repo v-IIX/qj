@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2E0B179E-21C5-4D1E-B12C-41B18BBABA61}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Project</RootNamespace>
-    <AssemblyName>Project</AssemblyName>
+    <ProjectGuid>{ACB44D8F-EDF0-4857-B314-7C8E682B0EF6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ulti</RootNamespace>
+    <AssemblyName>Ulti</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bogus, Version=33.1.1.0, Culture=neutral, PublicKeyToken=fa1bb3f3f218129a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bogus.33.1.1\lib\net40\Bogus.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,37 +44,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="log\SqlRunningDuration.cs" />
+    <Compile Include="MockData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CommonFramwork\CommonFramwork.csproj">
       <Project>{a72be208-51da-48fc-9310-be996c614273}</Project>
       <Name>CommonFramwork</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAL\DAL.csproj">
-      <Project>{1245fa05-7433-45e1-8ed3-670daf932545}</Project>
-      <Name>DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Factory\Factory.csproj">
-      <Project>{e8cf48aa-addc-481c-ae51-47d31166e2da}</Project>
-      <Name>Factory</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\IDAL\IDAL.csproj">
-      <Project>{1c3605b6-af8e-474d-a626-6763664aeb6c}</Project>
-      <Name>IDAL</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{afaea3ba-fe94-4e53-884d-c708ee2ff087}</Project>
       <Name>Model</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ulti\Ulti.csproj">
-      <Project>{acb44d8f-edf0-4857-b314-7c8e682b0ef6}</Project>
-      <Name>Ulti</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

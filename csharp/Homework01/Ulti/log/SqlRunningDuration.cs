@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CommonFramwork.log
 {
-  public class SqlRunningTime
+  public class SqlRunningDuration
   {
     public static void SaveRunningTime(int count,string type,long time)
     {
