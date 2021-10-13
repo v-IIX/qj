@@ -28,12 +28,11 @@ namespace DAL
       Type type = typeof(T);
       T t = (T)Activator.CreateInstance(type);
 
-      string columnString = string.Join(",", type.GetProperties().Select(p => $"[{AttributeHelper.GetColumnName(p)}]"));
-      string sql = $"select {columnString} from [{type.Name}] where Id={id}";
+      string queryString = $"{TSqlHelper<T>.FindSql}{id}";
 
       using (SqlConnection conn = new SqlConnection(StaticConstant.SqlServerConnString))
       {
-        SqlCommand comm = new SqlCommand(sql, conn);
+        SqlCommand comm = new SqlCommand(queryString, conn);
         conn.Open();
         SqlDataReader reader = comm.ExecuteReader();
         t = this.ReaderToList<T>(reader).FirstOrDefault();
@@ -82,11 +81,15 @@ namespace DAL
 
     public void UpdateAll<T>(T t) where T : BaseModel
     {
+      if (!AttributeHelper.Validate<T>(t)) {
+        throw new Exception("数据不正确");
+      }
+
       Type type = typeof(T);
       var props = type.GetProperties().Where(x => !x.Name.Equals("Id"));
       string columnString = string.Join(",", props.Select(x => $"[{AttributeHelper.GetColumnName(x)}] = @{AttributeHelper.GetColumnName(x)}"));
       string queryString = $"update [{type.Name}] set {columnString} where id = {t.Id}";
-      SqlParameter[] sqlParameters = props.Select(x => new SqlParameter($"@{AttributeHelper.GetColumnName(x)}", x.GetValue(t) ?? DBNull.Value)).ToArray();
+      SqlParameter[] sqlParameters = props.Select(x => new SqlParameter($"@{AttributeHelper.GetColumnName(x)}", x.GetValue(t) ?? DBNull.Value)).ToArray(); //向数据库中的字段赋值null时，不能直接=null，而是要使用DBNUll.Value
 
       using (SqlConnection conn = new SqlConnection(StaticConstant.SqlServerConnString))
       {
