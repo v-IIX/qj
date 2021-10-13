@@ -55,6 +55,10 @@
       <Project>{1245fa05-7433-45e1-8ed3-670daf932545}</Project>
       <Name>DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Factory\Factory.csproj">
+      <Project>{e8cf48aa-addc-481c-ae51-47d31166e2da}</Project>
+      <Name>Factory</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IDAL\IDAL.csproj">
       <Project>{1c3605b6-af8e-474d-a626-6763664aeb6c}</Project>
       <Name>IDAL</Name>
@@ -62,6 +66,10 @@
     <ProjectReference Include="..\Model\Model.csproj">
       <Project>{afaea3ba-fe94-4e53-884d-c708ee2ff087}</Project>
       <Name>Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ulti\Ulti.csproj">
+      <Project>{acb44d8f-edf0-4857-b314-7c8e682b0ef6}</Project>
+      <Name>Ulti</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
