@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DelegateExtend\ListExtend.cs" />
+    <Compile Include="Event\Cat.cs" />
+    <Compile Include="Event\Dog.cs" />
+    <Compile Include="Event\Mother.cs" />
     <Compile Include="MyDelegate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
