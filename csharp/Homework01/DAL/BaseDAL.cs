@@ -81,7 +81,8 @@ namespace DAL
 
     public void UpdateAll<T>(T t) where T : BaseModel
     {
-      if (!AttributeHelper.Validate<T>(t)) {
+      if (!AttributeHelper.Validate<T>(t))
+      {
         throw new Exception("数据不正确");
       }
 
@@ -176,6 +177,28 @@ namespace DAL
       //}
       #endregion
 
+    }
+
+    private T ExcuteSql<T>(string queryString, Func<SqlCommand, T> func)
+    {
+      using (SqlConnection conn = new SqlConnection(StaticConstant.SqlServerConnString))
+      {
+        SqlCommand comm = new SqlCommand(queryString, conn);
+        SqlTransaction transaction = conn.BeginTransaction();
+        try
+        {
+          conn.Open();
+          T tResult = func.Invoke(comm);
+          transaction.Commit();
+          return tResult;
+        }
+        catch (Exception)
+        {
+          transaction.Rollback();
+          throw;
+        }
+
+      }
     }
   }
 }
