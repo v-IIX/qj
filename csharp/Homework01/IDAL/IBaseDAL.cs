@@ -17,7 +17,7 @@ namespace IDAL
   {
     T Find<T>(int id) where T : BaseModel;
 
-    List<T> FindALL<T>() where T : BaseModel;
+    List<T> FindAll<T>() where T : BaseModel;
 
     void UpdateAll<T>(T t) where T : BaseModel;
 

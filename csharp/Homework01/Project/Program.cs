@@ -55,15 +55,18 @@ namespace Project
         };
 
         MockData mockData = new MockData();
-        List<Company> data = (List<Company>)mockData.GetMockData<Company>(1000);
+        List<Company> data = (List<Company>)mockData.GetMockData<Company>(100);
 
         IBaseDAL baseDAL = DALFactory.CreateInstance();
-        baseDAL.Find<User>(1);
+        user=baseDAL.Find<User>(2);
+        user.Name = "Jack Ma";
+        baseDAL.UpdateAll(user);
+        baseDAL.FindAll<User>();
         baseDAL.Insert(data);
 
         //Console.ReadKey();
       }
-      catch (Exception)
+      catch (Exception ex)
       {
         throw;
       }
