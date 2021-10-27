@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DF7E9218-8478-47D8-9892-AC9BD75E0B2F}</ProjectGuid>
+    <ProjectGuid>{9DED0615-C1F4-444E-A7A4-741AEB087701}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>IOSerializer</RootNamespace>
-    <AssemblyName>IOSerializer</AssemblyName>
+    <RootNamespace>ExpressionDemo</RootNamespace>
+    <AssemblyName>ExpressionDemo</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,11 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,20 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Canstant.cs" />
-    <Compile Include="IO\ImageHelper.cs" />
-    <Compile Include="IO\MyIO.cs" />
-    <Compile Include="IO\Recurision.cs" />
+    <Compile Include="ActionFunc.cs" />
+    <Compile Include="ExpressionTest.cs" />
+    <Compile Include="ExpressionTreeVisualizer.cs" />
+    <Compile Include="ExpressionVisitorTest.cs" />
+    <Compile Include="MappingExtend\ExpressionGenericMapping.cs" />
+    <Compile Include="MappingExtend\ExpressionMapping.cs" />
+    <Compile Include="People.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
+    <Compile Include="MappingExtend\ReflectionMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="File\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
