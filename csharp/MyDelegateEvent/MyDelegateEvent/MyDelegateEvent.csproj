@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CarDealerAndConsumer\CarDealer.cs" />
+    <Compile Include="CarDealerAndConsumer\CarInfoEventArgs.cs" />
+    <Compile Include="CarDealerAndConsumer\Consumer.cs" />
     <Compile Include="DelegateExtend\ListExtend.cs" />
     <Compile Include="Event\Cat.cs" />
     <Compile Include="Event\Dog.cs" />
