@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example", "Example\Example.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyAttribute", "MyAttribute\MyAttribute.csproj", "{1495C680-78C6-4652-AB3D-B7D8BFAE6129}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AOP", "AOP\AOP.csproj", "{AE30082C-3150-42FC-993E-989B6C4BAAF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,11 +23,16 @@ Global
 		{1495C680-78C6-4652-AB3D-B7D8BFAE6129}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1495C680-78C6-4652-AB3D-B7D8BFAE6129}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1495C680-78C6-4652-AB3D-B7D8BFAE6129}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE30082C-3150-42FC-993E-989B6C4BAAF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE30082C-3150-42FC-993E-989B6C4BAAF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE30082C-3150-42FC-993E-989B6C4BAAF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE30082C-3150-42FC-993E-989B6C4BAAF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.PolicyInjection.6.0.1304.0\lib\NET45
 		SolutionGuid = {61002587-C0C4-425A-9F5D-E71B1A241342}
 	EndGlobalSection
 EndGlobal

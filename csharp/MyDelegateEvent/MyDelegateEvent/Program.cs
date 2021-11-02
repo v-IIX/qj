@@ -1,4 +1,5 @@
-﻿using MyDelegateEvent.DelegateExtend;
+﻿using MyDelegateEvent.CarDealerAndConsumer;
+using MyDelegateEvent.DelegateExtend;
 using MyDelegateEvent.Event;
 using System;
 using System.Collections.Generic;
@@ -48,6 +49,19 @@ namespace MyDelegateEvent
 
         throw;
       }
+
+      #region CarDealerAndConsumer
+      {
+        CarDealer carDealer = new CarDealer();
+
+        Consumer Valtteri = new Consumer("Valtteri");
+        carDealer.events += Valtteri.IsCarHere;
+        Consumer Max = new Consumer("Max");
+        carDealer.events += Max.IsCarHere;
+        carDealer.eventInvoke("Mercedes");
+
+      }
+      #endregion
 
       Console.ReadKey();
     }

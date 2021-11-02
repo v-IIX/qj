@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1495C680-78C6-4652-AB3D-B7D8BFAE6129}</ProjectGuid>
+    <ProjectGuid>{CF8BECB8-858E-4CE0-BFD6-7E0A0A766850}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MyAttribute</RootNamespace>
-    <AssemblyName>MyAttribute</AssemblyName>
+    <RootNamespace>Project</RootNamespace>
+    <AssemblyName>Project</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,21 +43,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomAttribute.cs" />
-    <Compile Include="Extension\RemarkExtension.cs" />
-    <Compile Include="Extension\ValidateExtension.cs" />
-    <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="bin\Debug\Config\east_style_json.json" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AOP\AOP.csproj">
-      <Project>{AE30082C-3150-42FC-993E-989B6C4BAAF1}</Project>
-      <Name>AOP</Name>
+    <ProjectReference Include="..\Common\H02Common.csproj">
+      <Project>{e023ce09-6763-456b-8c92-e655b1119b8e}</Project>
+      <Name>H02Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Factory\H02Factory.csproj">
+      <Project>{e7b1ed1e-af28-480e-956b-a8db73df70c2}</Project>
+      <Name>H02Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\H02AOP\H02AOP.csproj">
+      <Project>{34127716-B728-4F79-84ED-E5FEC55579C7}</Project>
+      <Name>H02AOP</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\H02Delegate\H02Delegate.csproj">
+      <Project>{7e3f965e-fdf8-4487-9d4d-05988feaa54e}</Project>
+      <Name>H02Delegate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interface\H02Interface.csproj">
+      <Project>{c8fb8734-3933-42bf-a5c1-95d5be72b19b}</Project>
+      <Name>H02Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Performer\Performer.csproj">
+      <Project>{2aeb0285-ac57-48ab-9225-2a0d31949b12}</Project>
+      <Name>Performer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ulti\Ulti.csproj">
+      <Project>{e1b3c5a4-794b-4e66-aadb-55ceefee7f10}</Project>
+      <Name>Ulti</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
