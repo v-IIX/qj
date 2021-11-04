@@ -16,7 +16,7 @@ namespace ExpressionDemo
       Expression<Func<People, bool>> expression2 = p => p.Id.ToString().Equals("1");
 
       Expression<Func<People, PeopleCopy>> exception3 = p => new PeopleCopy() { Id=p.Id,Name=p.Name,Age=p.Age };
-
+      
     }
   }
 }
