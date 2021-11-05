@@ -110,6 +110,7 @@ namespace ExpressionDemo
 
       }
 
+      //表达式目录树 + 静态字典
       {
         People people = new People()
         {
@@ -121,6 +122,7 @@ namespace ExpressionDemo
         var result4 = ExpressionMapping.Trans<People, PeopleCopy>(people);
       }
 
+      //表达式目录树 + 泛型缓存
       {
         {
           People people = new People()
@@ -131,9 +133,9 @@ namespace ExpressionDemo
           };
 
           var result5 = ExpressionGenericMapping<People, PeopleCopy>.Trans(people);
-
         }
       }
+
 
     }
   }

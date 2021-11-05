@@ -15,7 +15,6 @@ namespace ExpressionDemo.MappingExtend
   public class ExpressionGenericMapping<I, O>
   {
     private static Func<I, O> _func = null;
-
     static ExpressionGenericMapping()
     {
       ParameterExpression parameterExpression = Expression.Parameter(typeof(I), "i");
