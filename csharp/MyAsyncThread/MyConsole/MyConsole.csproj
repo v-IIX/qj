@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53F5D4D1-6086-4A6D-94BD-9F26FB6557A3}</ProjectGuid>
+    <ProjectGuid>{7B3F2AF5-6196-4C42-9EBB-19C1085F9FB3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>MyAsyncThread</RootNamespace>
-    <AssemblyName>MyAsyncThread</AssemblyName>
+    <RootNamespace>MyConsole</RootNamespace>
+    <AssemblyName>MyConsole</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,8 +35,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,19 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Common\RandomHelper.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormSSQ.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormSSQ.Designer.cs">
-      <DependentUpon>FormSSQ.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,12 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormSSQ.resx">
-      <DependentUpon>FormSSQ.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\AwaiAsyncLibrary\AwaiAsyncLibrary.csproj">
+      <Project>{761488D1-769F-4A8F-A040-5B1D7D64678B}</Project>
+      <Name>AwaiAsyncLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

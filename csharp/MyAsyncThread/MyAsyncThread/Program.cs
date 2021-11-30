@@ -11,8 +11,12 @@ namespace MyAsyncThread
   {
     static void Main(string[] args)
     {
-      Form1 form1 = new Form1();
-      Application.Run(form1);
+      //启动Form1
+      //Form1 form1 = new Form1();
+      //Application.Run(form1);
+
+      //启动FormSSQ
+      Application.Run(new FormSSQ());
     }
   }
 }
